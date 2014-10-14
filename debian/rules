@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+DESTDIR=$(CURDIR)/debian/erlang-p1-pam
+
+%:
+	dh $@ --buildsystem=rebar --with rebar
+
+
+override_dh_auto_configure:
+	./configure
+	dh_auto_configure
+
+
+override_dh_auto_install:
+	dh_install priv/bin/* /usr/lib/erlang/p1_pam/bin/
+	dh_auto_install
+
+
+override_dh_gencontrol:
+	find $(DESTDIR) -type d -empty -delete
+	dh_gencontrol
+
+
+override_dh_auto_clean:
+	rm -f config.log config.status
+	dh_auto_clean

@@ -1,0 +1,17 @@
+Description: adjust path to epam binary
+ Adjust the default path name of the epam binary for Debian.
+Author: Philipp Huebner <debalance@debian.org>
+
+Index: erlang-p1-pam/src/epam.erl
+===================================================================
+--- erlang-p1-pam.orig/src/epam.erl
++++ erlang-p1-pam/src/epam.erl
+@@ -81,7 +81,7 @@ acct_mgmt(Srv, User)
+     gen_server:call(?PROCNAME, {acct_mgmt, Srv, User}).
+ 
+ init([]) ->
+-    FileName = filename:join(get_bin_path(), "epam"),
++    FileName = "/usr/lib/erlang/p1_pam/bin/epam",
+     case file:read_file_info(FileName) of
+       {ok, Info} ->
+ 	  Mode = Info#file_info.mode band 2049,

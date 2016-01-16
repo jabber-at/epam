@@ -4,6 +4,7 @@ erlang-p1-pam (1.0.0-0.1) unstable; urgency=medium
   * Use upstream releases instead of the latest git snapshot.
   * Use upstream-tag format to make use of upstream tags.
   * Add VCS-* fields to debian/control.
+  * Fix duplicate license paragraph in debian/changelog.
 
  -- Mathias Ertl <mati@jabber.at>  Sat, 16 Jan 2016 12:04:22 +0100
 

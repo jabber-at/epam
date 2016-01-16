@@ -5,6 +5,7 @@ erlang-p1-pam (1.0.0-0.1) unstable; urgency=medium
   * Use upstream-tag format to make use of upstream tags.
   * Add VCS-* fields to debian/control.
   * Fix duplicate license paragraph in debian/changelog.
+  * Add erlang-syntax-tools so we also build on wily.
 
  -- Mathias Ertl <mati@jabber.at>  Sat, 16 Jan 2016 12:04:22 +0100
 

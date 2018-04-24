@@ -6,7 +6,7 @@ Index: erlang-p1-pam/src/epam.erl
 ===================================================================
 --- erlang-p1-pam.orig/src/epam.erl
 +++ erlang-p1-pam/src/epam.erl
-@@ -81,7 +81,7 @@ acct_mgmt(Srv, User)
+@@ -82,7 +82,7 @@
      gen_server:call(?PROCNAME, {acct_mgmt, Srv, User}).
  
  init([]) ->
